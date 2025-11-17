@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "./../fonts/estedad/index.css";
+
+@theme {
+  --font-estedad: "Estedad"
+}
+
+body {
+  @apply text-zinc-100 bg-zinc-900 font-estedad ;
+}
