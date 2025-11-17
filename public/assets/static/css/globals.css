@@ -2,9 +2,18 @@
 @import "./../fonts/estedad/index.css";
 
 @theme {
-  --font-estedad: "Estedad"
+  --font-estedad: "Estedad";
+
+  --breakpoint-*:initial;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
 }
 
 body {
-  @apply text-zinc-100 bg-zinc-900 font-estedad ;
+  @apply text-zinc-100 bg-zinc-950 font-estedad;
+}
+
+@utility container {
+  @apply mx-auto w-[90%] md:w-full
 }
