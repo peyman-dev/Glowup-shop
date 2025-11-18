@@ -8,7 +8,7 @@ const Comment = ({name, content, img}: {
   img: string
 }) => {
   return (
-    <div className="select-none flex flex-col justify-between bg-zinc-900 w-full h-70 border-2 border-zinc-800 rounded-lg pt-5 pb-1 px-5">
+    <div className="select-none flex flex-col justify-between bg-zinc-900 w-full h-70 border-2 border-zinc-800 rounded-lg pt-5 pb-3 px-5">
       <div>
 
       <div className="flex items-center text-yellow-500 gap-0.5">
@@ -26,7 +26,11 @@ const Comment = ({name, content, img}: {
         </p>
       </div>
       <div className="flex items-start gap-2">
-        <Image className="size-20! w-20! object-cover! rounded-md"   src={img} alt={name} />
+        <Image className="size-20! w-20! object-cover! rounded-md" preview={{
+          mask: (
+            <span className="size-full flex items-center justify-center bg-black/50 rounded-lg font-estedad! text-xs">پیش‌نمایش</span>
+          )
+        }}   src={img} alt={name} />
       </div>
     </div>
   );

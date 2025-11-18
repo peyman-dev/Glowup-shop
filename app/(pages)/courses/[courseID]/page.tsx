@@ -6,6 +6,7 @@ import CourseImage from "@/app/_components/templates/product/hero-section/course
 import Description from "@/app/_components/templates/product/hero-section/description";
 import Comments from "@/app/_components/templates/product/hero-section/commnts";
 import BottomBar from "@/app/_components/templates/product/bottom-bar";
+import DeveloperSign from "@/app/_components/common/developer-sign";
 
 const page = async ({
   params,
@@ -40,6 +41,7 @@ const page = async ({
     </div>
 
     <BottomBar />
+    <DeveloperSign />
   </main>;
 };
 

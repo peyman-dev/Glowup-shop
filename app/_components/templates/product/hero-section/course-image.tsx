@@ -24,7 +24,7 @@ const CourseImage = () => {
         loop
         modules={[Autoplay]}
         autoplay={{
-          delay: 1700,
+          delay: 3500,
         }}
       >
         <SwiperSlide>

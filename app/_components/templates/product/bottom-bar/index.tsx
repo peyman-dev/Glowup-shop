@@ -8,7 +8,7 @@ const BottomBar = () => {
 
   if (isMobile) {
     return (
-      <div className="fixed bottom-0 right-0 w-full h-22 border-t border-zinc-300/20 flex items-center px-4 justify-between bg-black/50 backdrop-blur-sm z-50">
+      <div className="fixed bottom-0! mb-0! right-0 w-full h-22 border-t border-zinc-300/20 flex items-center px-4 justify-between bg-black/50 backdrop-blur-sm z-50">
         <div className="font-bold">
           <div>
             <span className="text-lg">

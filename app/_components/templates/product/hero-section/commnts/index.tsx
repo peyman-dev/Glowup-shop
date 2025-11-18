@@ -33,9 +33,9 @@ const Comments = () => {
       <Swiper
         ref={swiperRef}
         modules={[Autoplay]}
-        autoplay={{ delay: 1500, disableOnInteraction: false }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         spaceBetween={20}
-        slidesPerView={1.5}
+        slidesPerView={1.3}
         centeredSlides={false}
         initialSlide={0}
         watchSlidesProgress={true}
