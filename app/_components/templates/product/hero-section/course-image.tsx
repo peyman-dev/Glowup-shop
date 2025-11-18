@@ -4,11 +4,10 @@ import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/swiper.css";
 import { Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
+import { Image } from "antd";
 
 const CourseImage = () => {
   const ref = useRef<SwiperRef>(null);
-
 
   return (
     <div className="relative flex items-center justify-center">
@@ -28,25 +27,29 @@ const CourseImage = () => {
         }}
       >
         <SwiperSlide>
-          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden">
+          <div className="h-[628px] md:h-[684px]  rounded-xl overflow-hidden">
             {" "}
             <Image
-              width={1000}
-              className="size-full!"
-              objectFit="cover"
-              height={1000}
+            preview={{
+              mask: (
+                <span className="font-estedad!"> نمایش </span>
+              )
+            }}
+              className="size-full! object-cover!"
               src={"/assets/server/product.png"}
               alt=""
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden">
+          <div className="h-[628px] md:h-[684px]  rounded-xl overflow-hidden">
             <Image
-              width={1000}
-              className="size-full!"
-              objectFit="cover"
-              height={1000}
+            preview={{
+              mask: (
+                <span className="font-estedad!"> نمایش </span>
+              )
+            }}
+              className="size-full! min-h-max! object-cover!"
               src={"/assets/server/cover-text.png"}
               alt=""
             />
