@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "./../fonts/estedad/index.css";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-estedad: "Estedad";

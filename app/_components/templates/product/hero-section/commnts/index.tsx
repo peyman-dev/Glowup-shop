@@ -5,6 +5,7 @@ import "swiper/swiper.css";
 import { Autoplay } from "swiper/modules";
 import Comment from "./comment";
 import Link from "next/link";
+import { comments } from "./items";
 
 const Comments = () => {
   const swiperRef = useRef<SwiperRef>(null);
@@ -39,23 +40,24 @@ const Comments = () => {
         initialSlide={0}
         watchSlidesProgress={true}
       >
+        {Array.from(comments).map((cm, i) => (
+          <SwiperSlide>
+            {" "}
+            <Comment {...cm} key={cm.id} />
+          </SwiperSlide>
+        ))}
         <SwiperSlide>
-          <Comment />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Comment />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Comment />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Comment />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Comment />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Comment />
+          <div className="select-none flex items-center text-center justify-center flex-col gap-2 bg-zinc-900 w-full h-60 border-2 border-zinc-800 rounded-lg  p-5">
+            <p>و صدها دانشجوی دیگر که در این قاب جا نمی‌شن !</p>
+            <button  onClick={() => {
+              document.querySelector('#payment-link')?.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              })
+            }} className="px-2.5 text-sm mt-3 cursor-pointer hover:bg-red-500! rounded-md py-1 bg-red-600 text-white">
+              اکنون دوره را تهیه کنید
+            </button>
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>

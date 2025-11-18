@@ -1,4 +1,3 @@
-// hooks/useModal.ts (or wherever you prefer to place it)
 'use client';
 
 import { createContext, useContext, useState, ReactNode } from 'react';
@@ -38,7 +37,6 @@ export function ModalProvider({ children }: ModalProviderProps) {
         footer={null}
         destroyOnClose
         centered
-        width={800}
       >
         {content}
       </Modal>
