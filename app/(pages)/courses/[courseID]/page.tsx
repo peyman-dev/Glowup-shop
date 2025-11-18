@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد.",
-    description: "Check out my Next.js app!",
+    description: "پتانسیل رشد قدی خودت رو به نهایت ژنتیک بدنیت برسون",
+
     images: ["/assets/server/product.png"],
   },
   // Other meta tags

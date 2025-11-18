@@ -1,13 +1,17 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import "swiper/swiper.css";
 import { Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Image } from "antd";
+import Image from "next/image";
+import ImagePreview from "@/app/_components/common/image-preview";
 
 const CourseImage = () => {
   const ref = useRef<SwiperRef>(null);
+  const [isPreviewOpen ,setIsPreviewOpen] = useState(false)
+
+  const images = ["/assets/server/product.png", "/assets/server/cover-text.png"]
 
   return (
     <div className="relative flex items-center justify-center">
@@ -23,33 +27,29 @@ const CourseImage = () => {
         loop
         modules={[Autoplay]}
         autoplay={{
-          delay: 3500,
+          delay: 1700,
         }}
       >
         <SwiperSlide>
-          <div className="h-[628px] md:h-[684px]  rounded-xl overflow-hidden">
+          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden" onClick={() => setIsPreviewOpen(true)}>
             {" "}
             <Image
-            preview={{
-              mask: (
-                <span className="font-estedad!"> نمایش </span>
-              )
-            }}
-              className="size-full! object-cover!"
+              width={1000}
+              className="size-full!"
+              objectFit="cover"
+              height={1000}
               src={"/assets/server/product.png"}
               alt=""
             />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[628px] md:h-[684px]  rounded-xl overflow-hidden">
+          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden" onClick={() => setIsPreviewOpen(true)}>
             <Image
-            preview={{
-              mask: (
-                <span className="font-estedad!"> نمایش </span>
-              )
-            }}
-              className="size-full! min-h-max! object-cover!"
+              width={1000}
+              className="size-full!"
+              objectFit="cover"
+              height={1000}
               src={"/assets/server/cover-text.png"}
               alt=""
             />
@@ -62,6 +62,7 @@ const CourseImage = () => {
       >
         <ChevronLeft className="size-6" />
       </button>
+      <ImagePreview images={images} isOpen={isPreviewOpen} onClose={() => setIsPreviewOpen(false)}/>
     </div>
   );
 };
