@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/public/assets/static/css/globals.css";
 import "@/public/assets/static/fonts/estedad/index.css";
-import { ModalProvider } from "./_core/hooks/use-moda";
+import { ModalProvider } from "./_core/hooks/use-modal";
 
 export const metadata: Metadata = {
   title: "وبسایت رسمی گلوو آپ",

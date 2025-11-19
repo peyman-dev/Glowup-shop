@@ -18,3 +18,11 @@ body {
 @utility container {
   @apply mx-auto w-[90%] md:w-full
 }
+
+.ant-modal {
+  @apply bg-zinc-950!
+}
+
+.ant-modal-content {
+  @apply bg-zinc-950! font-estedad!
+}

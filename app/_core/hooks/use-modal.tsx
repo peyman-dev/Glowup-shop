@@ -35,7 +35,6 @@ export function ModalProvider({ children }: ModalProviderProps) {
         open={visible}
         onCancel={closeModal}
         footer={null}
-        destroyOnClose
         centered
       >
         {content}
