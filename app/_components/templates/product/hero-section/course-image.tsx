@@ -9,9 +9,16 @@ import ImagePreview from "@/app/_components/common/image-preview";
 
 const CourseImage = () => {
   const ref = useRef<SwiperRef>(null);
-  const [isPreviewOpen ,setIsPreviewOpen] = useState(false)
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-  const images = ["/assets/server/product.png", "/assets/server/cover-text.png"]
+  const images = [
+    "/assets/server/product.png",
+    "/assets/server/cover-text.png",
+    "/assets/static/images/رضایت 2.png",
+    "/assets/static/images/رضایت3.png",
+    "/assets/static/images/رضایت4.png",
+    "/assets/static/images/نتایج.png",
+  ];
 
   return (
     <div className="relative flex items-center justify-center">
@@ -31,7 +38,10 @@ const CourseImage = () => {
         }}
       >
         <SwiperSlide>
-          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden" onClick={() => setIsPreviewOpen(true)}>
+          <div
+            className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden"
+            onClick={() => setIsPreviewOpen(true)}
+          >
             {" "}
             <Image
               width={1000}
@@ -44,7 +54,10 @@ const CourseImage = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden" onClick={() => setIsPreviewOpen(true)}>
+          <div
+            className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden"
+            onClick={() => setIsPreviewOpen(true)}
+          >
             <Image
               width={1000}
               className="size-full!"
@@ -62,7 +75,11 @@ const CourseImage = () => {
       >
         <ChevronLeft className="size-6" />
       </button>
-      <ImagePreview images={images} isOpen={isPreviewOpen} onClose={() => setIsPreviewOpen(false)}/>
+      <ImagePreview
+        images={images}
+        isOpen={isPreviewOpen}
+        onClose={() => setIsPreviewOpen(false)}
+      />
     </div>
   );
 };
