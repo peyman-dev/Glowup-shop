@@ -27,14 +27,17 @@ const page = async ({
 
   return (
     <main id="product-page" className="py-8 space-y-5 md:space-y-10 container">
-      <ProductHeadTitle text="متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد." />
+      <ProductHeadTitle text=" متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد." />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 md:mt-14!">
         <div>
           <CourseImage />
         </div>
         <div className="space-y-5">
-          <CourseTitle text="متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد." />
+          <CourseTitle text=" متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد." />
+          <div className="px-3 bg-green-600/15 text-green-500 border border-current/30 max-w-max py-1 5 text-sm rounded-md">
+            مناسب برای تمامی سنین
+          </div>
           <Price />
           <PaymentButton />
       
