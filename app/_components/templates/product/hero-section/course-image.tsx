@@ -37,7 +37,24 @@ const CourseImage = () => {
           delay: 1700,
         }}
       >
-        <SwiperSlide>
+        {images.map((src, i) => (
+          <SwiperSlide key={i}>
+            <div
+              className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden"
+              onClick={() => setIsPreviewOpen(true)}
+            >
+              <Image
+                width={1000}
+                className="size-full!"
+                objectFit="cover"
+                height={1000}
+                src={src}
+                alt=""
+              />
+            </div>
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
           <div
             className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden"
             onClick={() => setIsPreviewOpen(true)}
@@ -52,8 +69,8 @@ const CourseImage = () => {
               alt=""
             />
           </div>
-        </SwiperSlide>
-        <SwiperSlide>
+        </SwiperSlide> */}
+        {/* <SwiperSlide>
           <div
             className="h-[628px] md:h-[699px]  rounded-xl overflow-hidden"
             onClick={() => setIsPreviewOpen(true)}
@@ -67,7 +84,7 @@ const CourseImage = () => {
               alt=""
             />
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       <button
         className="absolute left-0 size-10 md:size-15 z-20 border border-zinc-800 rounded-full flex items-center justify-center cursor-pointer bg-zinc-950"
