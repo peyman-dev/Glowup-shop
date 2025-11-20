@@ -1,5 +1,5 @@
 "use client";
-import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 import React, { useRef, useEffect, useState } from "react"; // useState رو اضافه کن
 import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard } from "swiper/modules";
@@ -12,14 +12,16 @@ interface ImagePreviewProps {
   initialIndex?: number;
 }
 
-const ImagePreview = ({ 
-  images, 
-  isOpen, 
+const ImagePreview = ({
+  images,
+  isOpen,
   onClose,
-  initialIndex = 0 
+  initialIndex = 0,
 }: ImagePreviewProps) => {
   const ref = useRef<SwiperRef>(null);
   const [currentIndex, setCurrentIndex] = useState(initialIndex); // state جدید برای currentIndex
+
+  console.log(currentIndex);
 
   useEffect(() => {
     if (ref.current?.swiper && initialIndex > 0) {
@@ -27,23 +29,6 @@ const ImagePreview = ({
     }
   }, [initialIndex]);
 
-  // event listener برای slideChange
-  useEffect(() => {
-    if (!ref.current?.swiper) return;
-
-    const swiper = ref.current.swiper;
-    setCurrentIndex(swiper.activeIndex); // initial set
-
-    const handleSlideChange = () => {
-      setCurrentIndex(swiper.activeIndex);
-    };
-
-    swiper.on('slideChange', handleSlideChange);
-
-    return () => {
-      swiper.off('slideChange', handleSlideChange);
-    };
-  }, []); // فقط یک بار اجرا می‌شه
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -68,7 +53,9 @@ const ImagePreview = ({
       </button>
 
       <button
-        onClick={() => ref.current?.swiper?.slideNext()}
+        onClick={() => {
+          ref.current?.swiper?.slideNext();
+        }}
         className="absolute left-2 md:left-6 z-10 p-2 md:p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-200 hover:scale-110 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
         aria-label="Previous image"
       >
@@ -88,12 +75,19 @@ const ImagePreview = ({
         modules={[Navigation, Keyboard]}
         centeredSlides
         slidesPerView={1}
+        onSlideChange={(s) => {
+          console.log(s)
+          setCurrentIndex(s.activeIndex );
+        }}
         spaceBetween={24}
         keyboard={{ enabled: true }}
         className="w-full h-full"
       >
         {images.map((slide, index) => (
-          <SwiperSlide key={`${slide}-${index}`} className="flex items-center justify-center p-4 md:p-8">
+          <SwiperSlide
+            key={`${slide}-${index}`}
+            className="flex items-center justify-center p-4 md:p-8"
+          >
             <div className="relative w-full h-full flex items-center justify-center">
               <img
                 src={slide || "/placeholder.svg"}
@@ -106,7 +100,8 @@ const ImagePreview = ({
       </Swiper>
 
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white text-sm md:text-base font-medium">
-        {currentIndex + 1} / {images.length} {/* حالا از state استفاده می‌کنه */}
+        {currentIndex + 1} / {images.length}{" "}
+        {/* حالا از state استفاده می‌کنه */}
       </div>
     </div>
   );
