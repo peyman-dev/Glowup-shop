@@ -36,7 +36,7 @@ const page = async ({
         <div className="space-y-5">
           <CourseTitle text=" متود قد - دقیق‌ترین و علمی‌ترین روش برای افزایش قد." />
           <div className="px-3 bg-green-600/15 text-green-500 border border-current/30 max-w-max py-1 5 text-sm rounded-md">
-            مناسب برای تمامی سنین
+          مناسب برای رنج سنی 13 سال تا 35 سال
           </div>
           <Price />
           <PaymentButton />
